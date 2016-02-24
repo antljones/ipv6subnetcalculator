@@ -1,0 +1,11 @@
+# Any binary files
+*.class
+# Any packaged files
+*.jar
+
+#ignore eclipse settings
+.settings/
+.settings/*
+
+#binary directory
+bin/
