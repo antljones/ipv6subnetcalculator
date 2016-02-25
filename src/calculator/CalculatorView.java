@@ -14,29 +14,22 @@ public class CalculatorView {
 	
 	private JTextField addressField;
 	private JComboBox<String> maskBox;
-	private JLabel broadcastAddressLabel;
-	private JLabel networkAddressLabel;
 	private JLabel availableAddressAmountLabel;
 	private JButton calcBtn;
 	
-	public CalculatorView(Container contentPane) {
+	public CalculatorView(Container contentPane, String[] maskEntries) {
 		JPanel subnetPanel = new JPanel();
 		
 		Dimension d = new Dimension( 40 , 20 );
 		
 		subnetPanel = new JPanel( new GridLayout( 0 , 1 ) );
 		addressField = new JTextField( 20 );
-		broadcastAddressLabel = new JLabel( "Broadcast Address:" );
-		broadcastAddressLabel.setSize( d );
-		networkAddressLabel = new JLabel( "Network Address:" );
-		networkAddressLabel.setSize( d );
+		maskBox = new JComboBox<String>( maskEntries );
 		availableAddressAmountLabel = new JLabel("Available Addresses:");
 		calcBtn = new JButton( "Calculate" );
 		
 		subnetPanel.add( addressField );
 		subnetPanel.add( maskBox );
-		subnetPanel.add( networkAddressLabel );
-		subnetPanel.add( broadcastAddressLabel );
 		subnetPanel.add( availableAddressAmountLabel );
 		subnetPanel.add( calcBtn );
 
@@ -50,10 +43,6 @@ public class CalculatorView {
 	
 	public JTextField getAddressField() {
 		return addressField;
-	}
-
-	public JLabel getNetworkAddressLabel() {
-		return networkAddressLabel;
 	}
 	
 	public JLabel getAvailableAddressAmountLabel() {

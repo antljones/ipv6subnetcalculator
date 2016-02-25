@@ -11,8 +11,18 @@ public class CalculatorController {
 	private CalculatorView calcView;
 	
 	public CalculatorController(Container contentPane) {
-		this.calcView = new CalculatorView(contentPane);
+		this.calcView = new CalculatorView(contentPane,createMaskEntries());
 		setCalcListener();
+	}
+	
+	private String[] createMaskEntries() {	
+		maskEntries = new String[ 65 ];
+		
+		for ( int i = 0; i <= 64; i++ ) {
+			maskEntries[ i ] = " /" + Integer.toString( 64 + i );
+		}
+		
+		return maskEntries;
 	}
 	
 	private void setCalcListener() {
