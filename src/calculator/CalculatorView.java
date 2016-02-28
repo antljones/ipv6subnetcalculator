@@ -14,7 +14,7 @@ public class CalculatorView {
 	
 	private JTextField addressField;
 	private JComboBox<String> maskBox;
-	private JLabel availableAddressAmountLabel;
+	private JLabel availableNetworksAmountLabel;
 	private JButton calcBtn;
 	
 	public CalculatorView(Container contentPane, String[] maskEntries) {
@@ -25,12 +25,12 @@ public class CalculatorView {
 		subnetPanel = new JPanel( new GridLayout( 0 , 1 ) );
 		addressField = new JTextField( 20 );
 		maskBox = new JComboBox<String>( maskEntries );
-		availableAddressAmountLabel = new JLabel("Available Addresses:");
+		availableNetworksAmountLabel = new JLabel("Available /64 Networks:");
 		calcBtn = new JButton( "Calculate" );
 		
 		subnetPanel.add( addressField );
 		subnetPanel.add( maskBox );
-		subnetPanel.add( availableAddressAmountLabel );
+		subnetPanel.add( availableNetworksAmountLabel );
 		subnetPanel.add( calcBtn );
 
 		contentPane.add( subnetPanel );
@@ -45,8 +45,8 @@ public class CalculatorView {
 		return addressField;
 	}
 	
-	public JLabel getAvailableAddressAmountLabel() {
-		return availableAddressAmountLabel;
+	public JLabel getNetworksAmountLabel() {
+		return availableNetworksAmountLabel;
 	}
 	
 	public JComboBox<String> getMaskBox() {
