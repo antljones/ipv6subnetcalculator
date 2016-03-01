@@ -12,14 +12,13 @@ import javax.swing.JTextField;
 
 public class CalculatorView {
 	
+	private JPanel subnetPanel;
 	private JTextField addressField;
 	private JComboBox<String> maskBox;
 	private JLabel availableNetworksAmountLabel;
 	private JButton calcBtn;
 	
 	public CalculatorView(Container contentPane, String[] maskEntries) {
-		JPanel subnetPanel = new JPanel();
-		
 		Dimension d = new Dimension( 40 , 20 );
 		
 		subnetPanel = new JPanel( new GridLayout( 0 , 1 ) );
